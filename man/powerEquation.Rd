@@ -1,14 +1,32 @@
 \name{powerEquation}
 \alias{powerEquation}
 \title{Returns the result of an exponential equation}
-\usage{powerEquation(a, b, x)
+\usage{
+  powerEquation(a, b, x)
 }
-\description{Returns the result of the exponential equation \eqn{Y = a * X^b}
-given \eqn{a}, \eqn{b} and \eqn{X}}
-\value{the dependent variable (\eqn{Y})}
-\author{Marco Bascietto \email{marco.bascietto@ibaf.cnr.it}}
-\arguments{\item{a}{the parameter \eqn{a} in the exponential equation}
-\item{b}{the parameter \eqn{b} in the exponential equation}
-\item{x}{the independent variable}
+\arguments{
+  \item{a}{the parameter \eqn{a} in the exponential
+  equation}
+
+  \item{b}{the parameter \eqn{b} in the exponential
+  equation}
+
+  \item{x}{the independent variable}
+}
+\value{
+  the dependent variable (\eqn{Y})
+}
+\description{
+  Returns the result of the exponential equation \eqn{Y = a
+  * X^b} given \eqn{a}, \eqn{b} and \eqn{X}
+}
+\seealso{
+  Other Biomass: \code{\link{allometryABDC}},
+  \code{\link{allometryAsca2011}},
+  \code{\link{allometryCutini2009}},
+  \code{\link{allometryPorte2002}},
+  \code{\link{logBiomass}},
+  \code{\link{pureQuadraticEquation}},
+  \code{\link{treeBiomass}}, \code{\link{treeTotalBiomass}}
 }
 

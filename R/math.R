@@ -12,7 +12,7 @@
 #' measured angle. Thus the function computes \eqn{x} coordinate as the sine of 
 #' the angle, and the \eqn{y} coordinate as the cosine of 
 #' the angle, enabling a correct representation of them on a cartesian plot.
-#' @author Marco Bascietto \email{marco.bascietto@@ibaf.cnr.it}
+#' @export
 toCartesianXY <- function(angle, distance) {
   angleRad <- angle * pi / 180
   c(sin(angleRad) * distance, cos(angleRad) * distance)
@@ -26,7 +26,7 @@ toCartesianXY <- function(angle, distance) {
 #' @param x Abscissa coordinate
 #' @param y Ordinate coordinate
 #' @return A vector holding angle in degrees and distance in the same unit as \eqn{x} and \eqn{y}
-#' @author Marco Bascietto \email{marco.bascietto@@ibaf.cnr.it}
+#' @export
 toPolar <- function(x, y) {
   d <- sqrt(x^2 + y^2)
   a <- (atan2(x, y) * 180 / pi) %% 360

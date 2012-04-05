@@ -39,29 +39,28 @@ help:
 # Development Tasks
 #------------------------------------------------------------------------------
 deps:
-	"$(RBIN)/R" --vanilla --slave -e "install.packages(c('roxygen'))"
+	"$(RBIN)/R" --vanilla --slave -e "install.packages(c('roxygen2'))"
 
-cleanman:
-	mv man/Dst.Rd ./
-	mv man/fieldData.Rd ./
-	mv man/treeData.Rd ./
-	rm man/*
-	mv *.Rd man/
-
-docs: cleanman
+docs:
 	cd ..;\
-	"$(RBIN)/R" --no-restore --slave -e "library(roxygen); roxygenize('$(PKGSRC)', '$(PKGSRC)', use.Rd2=TRUE, overwrite=TRUE, unlink.target=FALSE, copy.package=FALSE)"
+	"$(RBIN)/R" --no-restore --slave -e "library(roxygen2); roxygenize('$(PKGSRC)', '$(PKGSRC)', overwrite=TRUE, unlink.target=FALSE, copy.package=FALSE)"
 
-vignette:
-	cd inst/doc;\
+buildvignette:
+	cd vignettes;\
 	"$(RBIN)/R" CMD Sweave $(PKGNAME).Rnw;\
-	R CMD pdflatex $(PKGNAME).tex
+	R CMD pdflatex $(PKGNAME).tex;\
+	R CMD pdflatex $(PKGNAME).tex;\
+
+vignette: buildvignette
+	mv vignettes/$(PKGNAME).pdf inst/doc/
 
 build: docs
-	mv paper/ ../
+	mv *.Rproj ../
+	mv README.md ../
 	cd ..;\
-	"$(RBIN)/R" CMD build --no-vignettes $(PKGSRC)
-	mv ../paper/ .
+	"$(RBIN)/R" CMD build --no-vignettes $(PKGSRC);\
+	mv $(PKGSRC).Rproj $(PKGSRC)/$(PKGSRC).Rproj;\
+	mv README.md $(PKGSRC)/
 
 install: build
 	cd ..;\
@@ -73,7 +72,7 @@ check: build
 
 clean:
 	find . -type f -iname "*.aux"  -exec rm {} \; 
-	find ./inst/doc -type f -iname "*-*"  -exec rm {} \; 
+	find ./vignettes -type f -iname "*-*"  -exec rm {} \; 
 	find . -type f -iname "*.tex"  -exec rm {} \; 
 	find . -type f -iname "*.log"  -exec rm {} \; 
 	find . -type f -iname "*.out"  -exec rm {} \; 

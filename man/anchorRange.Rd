@@ -1,0 +1,37 @@
+\name{anchorRange}
+\alias{anchorRange}
+\title{Min/max values for the anchor position along the stem}
+\usage{
+  anchorRange(logs, CM)
+}
+\arguments{
+  \item{logs}{a data frame holding the selected logs (see
+  \code{\link{logPathSelection}})}
+
+  \item{CM}{an object of \code{CM} class}
+}
+\value{
+  a named vector of 2 elements: \item{z}{the height of the
+  CM} \item{hMax}{the height of the ``main stem'' tip}
+}
+\description{
+  The anchor level must not be lower than the tree CM (for
+  obvious static reasons) and higher than ``main stem''
+  height
+}
+\examples{
+library(treecm)
+data(stonePine1TreeData)
+vectors <- treeVectors(stonePine1TreeData)
+CM <- centreOfMass(vectors)
+logs <- logPathSelection(stonePine1TreeData)
+anchorRange(logs, CM)
+}
+\seealso{
+  Other Stabilization: \code{\link{centreOfMassAngle}},
+  \code{\link{centreOfMassModulus}},
+  \code{\link{getPlinthForce}},
+  \code{\link{logPathSelection}},
+  \code{\link{toCartesianXYZ}}
+}
+

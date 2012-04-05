@@ -1,0 +1,50 @@
+\docType{data}
+\name{stonePine1TreeData}
+\alias{stonePine1TreeData}
+\title{Field recorded values for a stone pine tree}
+\format{The format is:
+\code{
+ List of 4
+$ fieldData   :'data.frame':  26 obs. of  10 variables:
+..$ azimuth   : int [1:26] 275 275 190 200 230 200 180 150 340 220 ...
+..$ dBase     : int [1:26] 73 41 15 22 15 18 7 6 16 13 ...
+..$ dTip      : num [1:26] 41 16 0 0 0 0 0 0 0 0 ...
+..$ length    : num [1:26] 10.2 3.9 NA NA NA NA NA NA NA NA ...
+..$ tipD      : num [1:26] 2.5 2.75 7.95 7.95 7.95 7.95 7.95 7.95 7.95 3.95 ...
+..$ height    : num [1:26] 0 10.2 10.1 10.4 10.4 ...
+..$ tilt      : num [1:26] 80 80 0 0 0 0 0 0 0 0 ...
+..$ toBePruned: logi [1:26] FALSE FALSE FALSE FALSE FALSE FALSE ...
+..$ pathToTip : logi [1:26] TRUE TRUE FALSE FALSE FALSE FALSE ...
+..$ biomass   : num [1:26] 1825 193 123 313 123 ...
+$ density     : num 650
+$ allometryFUN:function (x, diameter)
+  $ branchesCM  : num 1
+}}
+\source{
+  Original data collected by the author
+}
+\description{
+  Required data for the assessment of the centre of mass
+  have been recorded in the field for a stone pine
+  (\emph{Pinus pinea} L.). \code{\link{treeBiomass}} has
+  already been run on the dataset, vectors have yet to be
+  computed.
+}
+\details{
+  This dataset includes a list of 4 elements: \itemize{
+  \item{the \code{\link{stonePine1FieldData}} dataset}
+  \item{the density of wood} \item{the allometry function
+  to be used to compute branches biomass} \item{the
+  estimate of branches centre of mass} }
+}
+\examples{
+data(stonePine1TreeData)
+vectors  <- treeVectors(stonePine1TreeData)
+CM       <- centreOfMass(vectors)
+summary(CM)
+# The steps to recreate this dataset:
+treeData <- importFieldData(system.file("data/stonePine1FieldData.csv.gz", package = "treecm"), 650, allometryABDC)
+treeData <- treeBiomass(treeData)
+}
+\keyword{datasets}
+
