@@ -1,10 +1,10 @@
-953f63af74b7b15b673097b3b8cadaf6 *DESCRIPTION
-451e5b04dc4864a178e2750e181254bb *Makefile
+5b1462fd4921f3e1aa01cf9b0eca488d *DESCRIPTION
+df798b0616bc36925435190e0f84535f *Makefile
 95c5102849a49e7aa4cbb343b5da8739 *NAMESPACE
-d100957d8641e1d8bf6b2407eb53d1c6 *NEWS
+3e242fa7156dec735be393ff64c10aef *NEWS
 97314aa625e6ebfd6b812501c421f26d *R/CM.R
-2571a84aaf6a3e2f672c0a3aab6b756a *R/SC.R
-ad2472e0c813171898b735b3fbd1f247 *R/biomass.R
+aedc86690c6e6f68ce5577cd3ba22992 *R/SC.R
+6201f5e8954fe36d1315289d6cdba980 *R/biomass.R
 d6d6669e5e689b16ec4e232fa4bc3d71 *R/math.R
 26d00473dc2f3e69ba9f1664bd69ddab *R/moment.R
 a34842a049b1817bc20b72900105f03d *R/stabilization.R
@@ -14,7 +14,7 @@ b87fe7f7aa33414e1735fb251febb205 *data/Dst.RData
 a5e9e499fce9a63e8eacb26b87379bdb *data/stonePine1FieldData.csv.gz
 8338446fa4570900d32e9f5849b8405b *data/stonePine1TreeData.RData
 0d2369b91f213723b45224bfb9c293fc *data/stonePine2FieldData.csv.gz
-5af10f33b7e1cf491cc81c47181ff14f *inst/doc/treecm.pdf
+07fa07e1d4f3344a3d3bb3cfdcd051b8 *inst/doc/treecm.pdf
 5de4a2b90edc173a0989403b8f96df15 *man/Dst.Rd
 b4c4de958f5a4b2c0eb97ef7e3792eaf *man/allometryABDC.Rd
 7842ada03fd76724af38a3f75246dc92 *man/allometryAsca2011.Rd
@@ -58,5 +58,3 @@ b1628690cecb077447bde160b1a8e918 *man/toPolar.Rd
 58e09b7107e3d23876ce6ed1e750faac *vignettes/collarTree_low.jpg
 c66a45d6f522655a687d80373634da6b *vignettes/stonePine1_low.jpg
 7cf6e90085dfe27200ea3846c12a5cdd *vignettes/treecm.Rnw
-b9f40fdf61b19727bd703cf1d3f25aac *vignettes/treecmex2.png
-ca798d9372b72e208c7c6f1ae313ac08 *vignettes/treecmexSR.png
