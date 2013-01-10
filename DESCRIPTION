@@ -16,11 +16,11 @@ Description: The centre of mass is a crucial data for arborists in
         tree need to be stabilized by a steel cable
 Collate: 'biomass.R' 'CM.R' 'math.R' 'moment.R' 'SC.R' 'treecm.R'
         'vectors.R' 'stabilization.R'
-Version: 1.1
+Version: 1.2
 URL: https://github.com/mbask/treecm
-Date: 2012-04-05
+Date: 2013-01-10
 Imports: plyr
 Suggests: ggplot2, reshape2
-Packaged: 2012-06-21 08:33:19 UTC; bask
+Packaged: 2013-01-10 16:49:56 UTC; bask
 Repository: CRAN
-Date/Publication: 2012-06-21 09:29:43
+Date/Publication: 2013-01-10 18:16:42
