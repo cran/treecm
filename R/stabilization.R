@@ -26,7 +26,7 @@ centreOfMassModulus <- function(object) {
 
 #' @title Returns the angle between CM modulus and the tree weight vector
 #'
-#' @note This function is mainly needed to compute the moment of the tree. The angle is need to compute the projection of the tree weight normal to the CM modulus
+#' @description This function is mainly needed to compute the moment of the tree. The angle is need to compute the projection of the tree weight normal to the CM modulus
 #'
 #' @param object an object of \code{CM} class
 #' @return a real number in radians
@@ -142,7 +142,7 @@ anchorRange <- function(logs, CM) {
 #' plinth <- data.frame(getPlinthForce(10, 20, logs, getMoment(treeMoment), CM))
 getPlinthForce <- function(l.stem, d, logs, treeMoment, CM) {
   ## Controllo congruenza dei dati definiti dall'utente
-  ## Ferma se: l'altezza dell'ancoraggio sul fusto è sotto il baricentro o se è maggiore dell'altezza del fusto
+  ## Ferma se: l'altezza dell'ancoraggio sul fusto e' sotto il baricentro o se e' maggiore dell'altezza del fusto
   aR <- anchorRange(logs, CM)
   stopifnot(l.stem >= aR[["z"]], l.stem <= aR[["hMax"]])
   rm(aR)

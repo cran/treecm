@@ -267,7 +267,7 @@ rm(biomassRaw)
 ###################################################
 library(ggplot2)
 ggplot(biomass, aes(x = code, y = biomass)) + 
-  geom_bar(aes(fill = allometry), position = "dodge")
+  geom_bar(aes(fill = allometry), position = "dodge", stat = "identity")
 
 
 ###################################################
